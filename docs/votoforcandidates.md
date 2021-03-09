@@ -1,6 +1,6 @@
 ## VOTO für Kandidierende
 
-VOTO ist nicht nur für Wählende gedacht. Kandidierende haben die Möglichkeit sich potenziellen jungen Wählenden digital zu präsentieren. Kandidierende können ihr Profit über alle Kanäle teilen und somit allen Bürger und Bürgerinnen ihre Statements leicht zugänglich machen.
+VOTO ist nicht nur für Wählende gedacht. Kandidierende haben die Möglichkeit sich potenziellen jungen Wählenden digital zu präsentieren. Kandidierende können ihr Profil über alle Kanäle teilen und somit allen Bürger und Bürgerinnen ihre Statements leicht zugänglich machen.
 
 ### User Journey
 
