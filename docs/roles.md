@@ -4,15 +4,15 @@ Durch die Skalierbarkeit von VOTO enstehen verschiedene Ebenen der Zugriffsberec
 
 ## Admin
 
-Admins sind Nutzer, die kompletten Zugriff über alle Funktionen des VOTO haben. Sie können Wahlen erstellen/bearbeiten/löschen sowie Nutzerberechtigungen verteilen. Adminrollen werden ausschließlich an VOTO-Team interne Mitarbeiter vergeben.
+Admins sind Nutzer, die kompletten Zugriff über alle Funktionen des VOTO haben. Sie können Wahlen erstellen/bearbeiten/löschen sowie Nutzerberechtigungen verteilen. Adminrollen werden ausschließlich an VOTO-Team interne Mitarbeiter und Mitarbeiterinnen vergeben.
 
 ## Wahlleiter
 
-Die sogenannten Wahlleiter sind die zentrale Rolle, die eine Wahl ausrichten will. Diese Rolle kann einen neuen VOTO für Ihre Wahl erstellen modifizieren und löschen. Das heißt, sie kann auch die Thesen, die für eine VOTO Instanz elementar sind, entwerfen und eintragen. Für einige Wahlen ist das Team hinter VOTO im Begriff dieser Rolle. Zukünftig (mit VOTO as a Service) wird dies jedoch auch buchbar sein. Zusätzlich können Wahlleiter, nachdem sie Parteien für die VOTO Instanz angelegt haben, Vertrauenspersonen für Parteien einladen.
+Der sogenannte Wahlleiter ist die zentrale Rolle, die eine Wahl ausrichten will. Diese Rolle kann einen neuen VOTO für Ihre Wahl erstellen, modifizieren und löschen. Das heißt, sie kann auch die Thesen, die für eine VOTO Instanz elementar sind, entwerfen und eintragen. Für einige Wahlen ist das Team hinter VOTO im Begriff dieser Rolle. Zukünftig (mit VOTO as a Service) wird dies jedoch auch buchbar sein. Zusätzlich können Wahlleiter, nachdem sie Parteien für die VOTO Instanz angelegt haben, Vertrauenspersonen für Parteien einladen.
 
 ## Vertrauensperson
 
-Vertrauenspersonen sind fester Bestandteil einer Wahl. Sie werden von den Wahlleitern eingeladen und sind verantwortlich für die weitere Einladung der Kandidierenden von genau Ihrer Liste. Außerdem bekommen Vertrauenspersonen einen Überblick über Ihre Kandidierenden und deren Status. Die Vertrauenspersonen dienen als authentifizierter und vertrauenswürdiger Verteiler an die Kandidierenden.
+Vertrauenspersonen sind fester Bestandteil einer Wahl. Sie werden von den Wahlleitern eingeladen und sind verantwortlich für die weitere Einladung der Kandidierenden von genau ihrer Liste. Außerdem bekommen Vertrauenspersonen einen Überblick über ihre Kandidierenden und deren Status. Die Vertrauenspersonen dienen als authentifizierter und vertrauenswürdiger Verteiler an die Kandidierenden.
 
 ## Kandidat
 
@@ -20,7 +20,7 @@ Kandidierende sind Personen, die bei einer Wahl antreten. Sie haben die Rechte I
 
 ## Voter
 
-Diese Rolle nehmen die Wählenden ein, die sich dafür entscheiden VOTO zu benutzen. Voter können das Frontend von VOTO benutzen und darauf basierend Ihre Matches zu Ihren Statements finden.
+Diese Rolle nehmen die Wählenden ein, die sich dafür entscheiden, VOTO zu benutzen. Voter können das Frontend von VOTO benutzen und darauf basierend ihre Matches zu ihren Statements finden.
 
 # Berechtigungen
 
