@@ -1,8 +1,8 @@
 # Match Algorithmus
 
-Der Matching Prozess von VOTO basiert auf einem relativ simplen aber effiziente Algorithmus.
+Der Matching Prozess von VOTO basiert auf einem relativ simplen aber effizienten Algorithmus.
 
-Grundlegend wird die Zustimmung eines Statements mit 5 verschiedenen Stufen prozentual bewertet. Der Nutzer kann auswählen:
+Grundlegend wird die Zustimmung eines Statements mit fünf verschiedenen Stufen prozentual bewertet. Der Nutzer kann auswählen:
 
 | Slider Text         | Gespeicherter Wert |
 | ------------------- | ------------------ |
@@ -12,17 +12,17 @@ Grundlegend wird die Zustimmung eines Statements mit 5 verschiedenen Stufen proz
 | Stimme weniger zu   | 25                 |
 | Stimme gar nicht zu | 0                  |
 
-Je nachdem ob der Nutzer sich dafür entscheidet eine These als wichtig einzustufen wird der Wert doppelt gewichtet.
+Je nachdem ob der Nutzer sich dafür entscheidet, eine These als wichtig einzustufen, wird der Wert doppelt gewichtet.
 
-Die Beantwortung der Thesen wird in einem Array gespeichert und nach der letzten Abstimmung an eine Functio geschickt die die Matches berechnet:
+Die Beantwortung der Thesen wird in einem Array gespeichert und nach der letzten Abstimmung an eine Function geschicktm, die die Matches berechnet:
 
 ### Schritt 1: Kandidierende laden
 
-Für die angegebene Wahl werden alle Kandidierende, die VOTO bereits ausgefüllt haben aus der Datenbank geladen.
+Für die angegebene Wahl werden alle Kandidierenden, die VOTO bereits ausgefüllt haben, aus der Datenbank geladen.
 
 ### Schritt 2: Neutrale Thesen überspringen
 
-Es werden alle Thesen des Nutzers, die neutral beantwortet wurden nicht gezählt und nicht in die Berechnung mit eingezogen. Der Rest wird weiter verarbeitet.
+Es werden alle Thesen des Nutzers, die neutral beantwortet wurden, nicht gezählt und nicht in die Berechnung mit eingezogen. Der Rest wird weiter verarbeitet.
 
 ### Schritt 3: Berechnung der Punktzahl
 
@@ -34,7 +34,7 @@ Die maximale Punktzahl (am Anfang 0) ergibt sich aus der Summe der Formel, die b
 maxPoints += = 2.0 * userWeight * candidateWeight;
 ```
 
-Die tatsächlich erreichten Punkte für eine These wird nun wie folgt berrechnet:
+Die tatsächlich erreichten Punkte für eine These werden nun wie folgt berrechnet:
 
 ```typescript
 const addPoints =
@@ -46,7 +46,7 @@ points += addPoints;
 
 ### Schritt 4: Verarbeiten der Gesamtpunktzahl
 
-Nachdem die Punktzahl aller Thesen wie oben beschrieben für jeden Kandidierenden berechnet und addiert wurde, wird das Resultat gerundet und in Prozent zurückgegeben:
+Nachdem die Punktzahl aller Thesen, wie oben beschrieben, für jeden Kandidierenden berechnet und addiert wurde, wird das Resultat gerundet und in Prozent zurückgegeben:
 
 ```typescript
 return Math.round((points / maxPoints) * 10000) / 100;
@@ -56,9 +56,9 @@ return Math.round((points / maxPoints) * 10000) / 100;
 
 ## Fallbeispiel:
 
-Nehmen wir an, wir haben für ein einfaches Beispiel nur 5 Thesen.
+Nehmen wir an, wir haben für ein einfaches Beispiel nur fünf Thesen.
 
-Die Beantwortung des Nutzers und des Kandidats lautet:
+Die Beantwortung des Nutzers und des Kandidaten lautet:
 
 <table>
  <tr>
@@ -123,7 +123,7 @@ Die Beantwortung des Nutzers und des Kandidats lautet:
  </tr>
 </table>
 
-Zuerst werden nun also die Kandiderende geladen, was in unserem Beispiel schon der Fall ist.
+Zuerst werden nun also die Kandiderenden geladen, was in unserem Beispiel schon der Fall ist.
 
 Anschließend werden die Thesen aussortiert, die von einem Nutzer als `neutral` eingestuft wurden. Damit ergibt sich folgende Datenstruktur des Nutzers:
 
@@ -192,4 +192,4 @@ Gerundet hat man nun ein Ergebnis von **`79%`**.
 
 ---
 
-Nach der Berechnung aller Kandiderenden, werden die Ergebnisse sortiert und dem Frontend zurückgegeben. Dort können nun die Matches in ihrer Reihenfolge angezeigt werden und Bilder der Kandidierenden geladen werden.
+Nach der Berechnung aller Kandiderenden werden die Ergebnisse sortiert und dem Frontend zurückgegeben. Dort können nun die Matches in ihrer Reihenfolge angezeigt werden und Bilder der Kandidierenden geladen werden.
