@@ -22,7 +22,7 @@ Die folgende Übersicht zeigt die grobe Architektur und Aufteilung der Software 
 
 ## Frontend
 
-Das Frontend orientiert sich an einer klassischen Vue.js App Struktur. Durch die Verwendung des [Framework7](https://framework7.io) im Frontend für Wählende, setzt die WebApp bereits auf Vue.js 3.0 wohingegen die Entwicklung des Frontends für das Kandierendenportal noch auf Vue.js 2.0 aufbaut.
+Das Frontend orientiert sich an einer klassischen Vue.js App Struktur. Durch die Verwendung des [Framework7](https://framework7.io) im Frontend für Wählende, setzt die WebApp bereits auf Vue.js 3.0, wohingegen die Entwicklung des Frontends für das Kandierendenportal noch auf Vue.js 2.0 aufbaut.
 
 Der Aufbau des Frontends für die WebApp lässt sich in einer Grafik darstellen:
 
@@ -48,14 +48,14 @@ Klassisch können Daten mit dem Javascript Firebase Web SDK geladen werden. Dies
 
 #### Anfrage der App auf Daten mit Functions
 
-Bei Anfragen, die entweder nur bestimmte Nutzer durchführen dürfen, oder die sich je nach Rolle unterschiedlich verhalten soll, oder die zusätzliche Rechenleistungen benötigt ( vote - matching Algorithmus ), wird eine Function aufgerufen.
+Bei einer Anfrage, die entweder nur bestimmte Nutzer durchführen dürfen, oder die sich je nach Rolle unterschiedlich verhalten soll, oder die zusätzliche Rechenleistungen benötigt ( vote - matching Algorithmus ), wird eine Function aufgerufen.
 
 ![Request data from Function](../res/requestfunction.png "Request data from Function")
 
 - **(1)** Das Frontend nutzt das Firebase Javascript SDK und stellt eine Anfrage an eine Function.
 - **(2.2 & 2.2)** Auf Basis von Custom User Auth Claims wird entschieden, ob die Anfrage gültig ist. Dies kann beispielsweise die Überprüfung der Rolle des Nutzers sein, der die Anfrage stellt.
 - **(3)** Nachdem die Anfrage gültig ist, können Daten von Firestore geladen und anschließend in der optionalen zusätzlichen Berechnung innerhalb der Function weiterverarbeitet werden.
-- **(4)** Dem Nutzer wird, je nach Verarbeitung die gewünschte Antwort zurückgegeben.
+- **(4)** Dem Nutzer wird je nach Verarbeitung die gewünschte Antwort zurückgegeben.
 
 ---
 
@@ -67,14 +67,14 @@ Manchmal ist es notwendig, Datenbankeinträge zu synchronisieren. Beispielsweise
 
 - **(1)** Das Frontend nutzt das Firebase Javascript SDK und stellt eine Anfrage an Firebase.
 - **(2/3)** Firebase prüft anhand der Security Rules für Firestore Collections, ob die Anfrage gültig ist. Ist dies der Fall, wird die Anfrage durchgelassen.
-- **(3.1 & 3.2)** Eine Function wird durch den Lese- oder Schreibvorgang aufgerufen. Im Beispiel des angemerkten Geburtsdatum wird das Alter daraufhin berechnet und im öffentlichen profil eingetragen.
+- **(3.1 & 3.2)** Eine Function wird durch den Lese- oder Schreibvorgang aufgerufen. Im Beispiel des angemerkten Geburtsdatum wird das Alter daraufhin berechnet und im öffentlichen Profil eingetragen.
 - **(4)** Der Nutzer erfährt nicht von der zusätzlichen Ausführung einer Function. Firestore wartet nicht auf die Beendigung der angestoßenen Function.
 
 ---
 
 #### Geplante, regelmäßige Aufrufe
 
-Backups werden nicht durch Anfrage sondern zeitbasiert durcheführt. So wird sichergestellt, dass regelmäßig Daten gesichert sind.
+Backups werden nicht durch Anfrage sondern zeitbasiert durchgeführt. So wird sichergestellt, dass regelmäßig Daten gesichert sind.
 
 ![Scheduled functions](../res/scheduled.png "Scheduled functions")
 
