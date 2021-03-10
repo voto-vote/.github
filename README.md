@@ -27,6 +27,7 @@
         <li><a href="./docs/architecture.md#technologie-stack">Technologie Stack</a></li>
         <li><a href="./docs/architecture.md#frontend">Frontend</a></li>
         <li><a href="./docs/architecture.md#backend">Backend</a></li>
+        <li><a href="./docs/cicd.md">CI/CD</a></li>
         <li><a href="./docs/algorithm.md">Match Algorithmus</a></li>
         <li><a href="./docs/roles.md">Rollenkonzepte</a></li>
       </ul>
