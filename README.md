@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://voto.vote">
-    <img src="https://voto.vote/images/voto_purple.png" alt="Logo" width="50%" height="auto">
+    <img src="https://voto-mailimages.s3.eu-central-1.amazonaws.com/voto.png" alt="Logo" width="50%" height="auto">
   </a>
 
   <h3 align="center">Wählen einfach machen.</h3>
@@ -24,9 +24,6 @@
     <li>
       <a href="./docs/architecture.md">VOTO Software</a>
       <ul>
-        <li><a href="./docs/architecture.md#technologie-stack">Technologie Stack</a></li>
-        <li><a href="./docs/architecture.md#frontend">Frontend</a></li>
-        <li><a href="./docs/architecture.md#backend">Backend</a></li>
         <li><a href="./docs/cicd.md">CI/CD</a></li>
         <li><a href="./docs/algorithm.md">Match Algorithmus</a></li>
         <li><a href="./docs/roles.md">Rollenkonzepte</a></li>

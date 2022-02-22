@@ -1,82 +1,36 @@
 # Software Architektur
 
-## Technologie Stack
+VOTO setzt zur besseren Skalierbarkeit auf modernste Cloud-Techniken. Das Gesamtsystem läuft serverless und basiert auf vielen einzelnen Microservices, die einen bestimmten logischen Zweck vom Gesamtsystem abbilden und somit eine höhere Verfügbarkeit und Ausfallsicherheit leisten. Es werden Komponenten der Google Cloud als auch der Amazon Cloud benutzt. Das folgende Diagramm gibt einen groben Überblick über die Architektur.
 
-VOTO setzt auf die Google Cloud Firebase Lösung. Folgende Tools werden weiterhin im Gesamstsystem eingesetzt:
+![High-Level-Architecture](../res/VOTO_Architecture.png "High-Level-Architecture")
 
-**Hosting/Backend:**
+Alle einzelnen Komponenten werden in diesem Teil der Dokumentation beschrieben.
 
-- [Google Firebase](https://firebase.google.com)
-- [Google Cloud Functions](https://cloud.google.com/functions?hl=de)
+**Hosting:**
+
+[Google Firebase](https://firebase.google.com) wird für das Hosting aller Webseiten benutzt. Die Web Applikation, der VOTO Builder und das Portal sind mit firebase gehostet. Durch die starke Zu- aber auch Abnahme von Nutzerinnen und Nutzer vor, beziehungsweise nach einer Wahl ist Google Firebase für VOTO die günstigste Möglichkeit, alle Webseiten skalierbar bereitzustellen.
 
 **Frontend:**
 
 - [VueJs](https://vuejs.org)
 - [Framework7 UI](https://framework7.io)
 
-Sowohl Frontend als auch Backend sind in Javascript und TypeScript geschrieben.
+Das Frontend orientiert sich an einer klassischen Vue.js App Struktur. Durch die Verwendung des [Framework7](https://framework7.io) im Frontend für Wählende, setzt die WebApp bereits auf Vue.js 3.0, wohingegen die Entwicklung des Frontends für das VOTO Portal noch auf Vue.js 2.0 aufbaut. Der VOTO Builder basiert auf einer React App und ist von den anderen Applikationen abgekapselt.
 
-Die folgende Übersicht zeigt die grobe Architektur und Aufteilung der Software Komponenten:
+**Identity Provider / Authentifizierung & Autorisierung:**
 
-![Software Komponenten](../res/overview.png "Software Komponenten")
+Alle Nutzer von VOTO authentifizieren sich mit Google durch die Firebase Authentifizierung. Ein extra dafür entwickelter Microservice [Auth Middleware](https:/github.com/voto-vote/auth-middleware) verwaltet die Authentifizierung cloud-agnostisch. Die Middleware ist im API Gateway von VOTO eingebaut und autorisiert die Anfragen an die API durch das Abfragen der Custom-Claims der Firebase Authentifizierung.
 
-## Frontend
+**Backend:**
 
-Das Frontend orientiert sich an einer klassischen Vue.js App Struktur. Durch die Verwendung des [Framework7](https://framework7.io) im Frontend für Wählende, setzt die WebApp bereits auf Vue.js 3.0, wohingegen die Entwicklung des Frontends für das Kandierendenportal noch auf Vue.js 2.0 aufbaut.
+VOTO profitiert von einem **komplett serverlosen** Backend. Wir benutzen ausschließlich Lambdas, die auf Anfrage aufgerufen werden. Mehr zu AWS Lambdas und Serverless Computing [hier](https://en.wikipedia.org/wiki/Serverless_computing). Dies vereinfacht die zukünftige Skalierung von VOTO und stellt VOTO sicher und kostengünstig zur Verfüugung. Das Backend besteht aus vielen einzelnen Microservices, die an das API Gateway angedockt und in logische Operationen aufgeteilt sind.
 
-Der Aufbau des Frontends für die WebApp lässt sich in einer Grafik darstellen:
+| **ApplicationService** | Endpunkte: <ul> <li>/applications</li> <li>/applications/{applicationId}</li> <li>/applications/{applicationId}/theses/{language}</li> <li>/applications/{applicationId}/theses/{language}/{theseId}</li> <li>/clusters/{clusterId}</li> <li>/themes/{themeId}</li> </ul> **Repository:** [ApplicationService](https://github.com/voto-vote/backend-application-service)                                                                                                                                                                                                               |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ElectionService**    | Endpunkte: <ul> <li>/elections</li> <li>/elections/{electionId}</li> </ul> **Repository:** [ElectionService](https://github.com/voto-vote/backend-election-service)                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **PartyService**       | Endpunkte: <ul> <li>/applications/{applicationId}/matches/parties</li> <li>/applications/{applicationId}/matches/parties/{partyId}</li> </ul> **Repository:** [PartyService](https://github.com/voto-vote/backend-party-service)                                                                                                                                                                                                                                                                                                                                                       |
+| **RoleService**        | Endpunkte: <ul> <li>/users</li> <li>/users/{userId}</li> <li>/admins</li><li>/admins/{adminId}</li> <li>/applications/{applicationId}/roles/creator</li> <li>/applications/{applicationId}/roles/creator/{creatorId}</li> <li>/applications/{applicationId}/roles/trustpersons</li> <li>/applications/{applicationId}/roles/trustpersons/{trustPersonId}</li> <li>/applications/{applicationId}/matches/candidates</li> <li>/applications/{applicationId}/matches/candidates/{candidateId}</li> </ul> **Repository:** [RoleService](https://github.com/voto-vote/backend-role-service) |
+| **VoteService**        | Endpunkte: <ul> <li>/applications/{applicationId}/matches/candidates/{candidateId}/votes</li> <li>/applications/{applicationId}/matches/parties/{partyId}/votes</li> </ul> **Repository:** [RoleService](https://github.com/voto-vote/backend-role-service)                                                                                                                                                                                                                                                                                                                            |
+| **MailService**        | Der MailService wird nicht direkt durch einen API Endpunkt angesprochen. Stattdessen wird dieser von anderen Microservices angetriggert. Dies geschieht durch den Simple Notification Service, der eine Verbindung zwischen den Microservices erlaubt.                                                                                                                                                                                                                                                                                                                                 |
 
-![Frontend](../res/frontend.png "Frontend")
-
-## Backend
-
-VOTO profitiert von einem **komplett serverlosen** Backend. Wir benutzen ausschließlich Functions, die auf Anfrage aufgerufen werden. Mehr zu Functions und Serverless Computing [hier](https://en.wikipedia.org/wiki/Serverless_computing). Dies vereinfacht die zukünftige Skalierung von VOTO.
-
-Dadurch gibt es verschiedene Subkomponenten im Backend, die verschieden aufgerufen werden.
-
-#### Anfrage der App auf Daten mit Firestore
-
-Klassisch können Daten mit dem Javascript Firebase Web SDK geladen werden. Diese Aufrufe finden bei allen kontrollierbaren Aufrufen statt, die keinen speziellen Zugriff auf bestimme Collections benötigen. Als Beispiel wird in der folgenden Grafik beschrieben, wie Wahlen geladen werden:
-
-![Request data from firestore](../res/requestfirestore.png "Request data from firestore")
-
-- **(1)** Das Frontend nutzt das Firebase Javascript SDK und stellt eine Anfrage direkt an Firebase.
-- **(2/3)** Firebase prüft anhand der Security Rules für Firestore Collections, ob die Anfrage gültig ist. Ist dies der Fall, wird die Anfrage durchgelassen.
-- **(4)** Firebase liest die angefragten Daten aus der Firestore Collection `elections` aus und gibt diese zurück an das Frontend.
-
----
-
-#### Anfrage der App auf Daten mit Functions
-
-Bei einer Anfrage, die entweder nur bestimmte Nutzer durchführen dürfen, oder die sich je nach Rolle unterschiedlich verhalten soll, oder die zusätzliche Rechenleistungen benötigt ( vote - matching Algorithmus ), wird eine Function aufgerufen.
-
-![Request data from Function](../res/requestfunction.png "Request data from Function")
-
-- **(1)** Das Frontend nutzt das Firebase Javascript SDK und stellt eine Anfrage an eine Function.
-- **(2.2 & 2.2)** Auf Basis von Custom User Auth Claims wird entschieden, ob die Anfrage gültig ist. Dies kann beispielsweise die Überprüfung der Rolle des Nutzers sein, der die Anfrage stellt.
-- **(3)** Nachdem die Anfrage gültig ist, können Daten von Firestore geladen und anschließend in der optionalen zusätzlichen Berechnung innerhalb der Function weiterverarbeitet werden.
-- **(4)** Dem Nutzer wird je nach Verarbeitung die gewünschte Antwort zurückgegeben.
-
----
-
-#### Anfrage der App auf Daten mit Firestore und geplanten Functions
-
-Manchmal ist es notwendig, Datenbankeinträge zu synchronisieren. Beispielsweise wird das Alter von Kandidierenden im öffentlichen Profil angezeigt. Dies geschieht auf Basis der privaten `User` Collection und deren Geburtstag Attribut. Öffentliche Nutzer sollen jedoch nur das Alter, nicht das konkrete Geburtsdatum sehen können - es ist also eine Verarbeitung notwendig. Nachdem nun ein Nutzer sein Geburtsdatum geändert hat und erkannt wurde, dass dieser Nutzer auch bei einer anstehenden Wahl kandidiert, wird eine Function aufgerufen, die das öffentliche Profil synchronisiert beziehungsweise das Alter errechnet. Dieser Prozess stellt sicher, dass private Informationen und öffentliche Informationen sicher getrennt sind und trotzdem auf Wunsch Daten synchronisiert werden können.
-
-![Request data from firestore and functions](../res/requestfirestoreSubFunction.png "Request data from firestore and functions")
-
-- **(1)** Das Frontend nutzt das Firebase Javascript SDK und stellt eine Anfrage an Firebase.
-- **(2/3)** Firebase prüft anhand der Security Rules für Firestore Collections, ob die Anfrage gültig ist. Ist dies der Fall, wird die Anfrage durchgelassen.
-- **(3.1 & 3.2)** Eine Function wird durch den Lese- oder Schreibvorgang aufgerufen. Im Beispiel des angemerkten Geburtsdatum wird das Alter daraufhin berechnet und im öffentlichen Profil eingetragen.
-- **(4)** Der Nutzer erfährt nicht von der zusätzlichen Ausführung einer Function. Firestore wartet nicht auf die Beendigung der angestoßenen Function.
-
----
-
-#### Geplante, regelmäßige Aufrufe
-
-Backups werden nicht durch Anfrage sondern zeitbasiert durchgeführt. So wird sichergestellt, dass regelmäßig Daten gesichert sind.
-
-![Scheduled functions](../res/scheduled.png "Scheduled functions")
-
-- **(1)** Eine Function wird durch ein Zeitevent aufgerufen (ähnlich zu CronJobs)
-- **(2)** Verarbeiten der Daten, Ausführen der Function und Schreiben in Firestore
+Die meisten Microservices werden durch einen Aufruf im API Gateway gestartet. Allerdings gibt es zusätzlich auch Funktionen, die regelmäßig aufgerufen werden, um beispielsweise Daten abzusichern. Mehr Information und Dokumentation ist jeweils bei den einzelnen Microservices zu finden.
