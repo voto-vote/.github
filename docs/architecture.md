@@ -19,7 +19,7 @@ Das Frontend orientiert sich an einer klassischen Vue.js App Struktur. Durch die
 
 **Identity Provider / Authentifizierung & Autorisierung:**
 
-Alle Nutzer von VOTO authentifizieren sich mit Google durch die Firebase Authentifizierung. Ein extra dafür entwickelter Microservice [Auth Middleware](https:/github.com/voto-vote/auth-middleware) verwaltet die Authentifizierung cloud-agnostisch. Die Middleware ist im API Gateway von VOTO eingebaut und autorisiert die Anfragen an die API durch das Abfragen der Custom-Claims der Firebase Authentifizierung.
+Alle Nutzer von VOTO authentifizieren sich mit Google durch die Firebase Authentifizierung. Ein extra dafür entwickelter Microservice [Auth Middleware](https://github.com/voto-vote/auth-middleware) verwaltet die Authentifizierung cloud-agnostisch. Die Middleware ist im API Gateway von VOTO eingebaut und autorisiert die Anfragen an die API durch das Abfragen der Custom-Claims der Firebase Authentifizierung.
 
 **Backend:**
 
