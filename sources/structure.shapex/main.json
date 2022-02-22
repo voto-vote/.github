@@ -1,0 +1,225 @@
+{
+  "shapes" : [
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{375, 54.370528754218412}\",\n  \"angle\" : 0,\n  \"size\" : \"{389.99999999999994, 150.41964749718773}\",\n  \"identifier\" : \"58C70793-D240-4509-AF62-6F8F84C709FB\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{385.46434442102168, 47.185264377109206}\",\n  \"angle\" : 0,\n  \"size\" : \"{379.53565557897838, 72.395088125703069}\",\n  \"identifier\" : \"845FAF37-D6DF-40A6-9437-1F2646ABA81A\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"Google Identity Provider\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"actor\",\n  \"position\" : \"{550, 141.42857142857144}\",\n  \"angle\" : 0,\n  \"size\" : \"{40, 57.142857142857139}\",\n  \"identifier\" : \"BB6C18CD-D739-4C3A-91E1-9205453362AC\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"variant_3\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{375, 314.79017625140614}\",\n  \"angle\" : 0,\n  \"size\" : \"{389.99999999999994, 150.41964749718773}\",\n  \"identifier\" : \"77A6720C-787E-414F-8C49-898DF98D5D72\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : true,\n  \"shape\" : \"svg\",\n  \"position\" : \"{532.60491187429693, 380}\",\n  \"angle\" : 0,\n  \"size\" : \"{74.790176251406137, 74.790176251406137}\",\n  \"identifier\" : \"4C921155-9179-4EF7-BB8A-E08B47FBFBF6\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_13\",\n  \"value\" : \"\",\n  \"privateStyle\" : {\n    \"textVerticalAlignment\" : 0\n  },\n  \"isRelative\" : false,\n  \"shapeOption\" : {\n    \"name\" : \"gmdi>communication\\\/vpn_key-materialicons-24px\",\n    \"isTemplate\" : true\n  }\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{390, 327.60491187429693}\",\n  \"angle\" : 0,\n  \"size\" : \"{379.53565557897838, 72.395088125703069}\",\n  \"identifier\" : \"AF495F99-0086-45C8-8028-AACB6E6B7252\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"Auth-Middleware\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{1150, 222.05449167730649}\",\n  \"angle\" : 0,\n  \"size\" : \"{440.00000000000011, 78.91559468724769}\",\n  \"identifier\" : \"B3818E2C-FC23-4B65-A2A7-F37A35724A91\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{1150.4751431284874, 232.96096818658384}\",\n  \"angle\" : 0,\n  \"size\" : \"{439.04971374302539, 68.009118177970294}\",\n  \"identifier\" : \"59BE4562-7A0C-4133-89B1-F7A50CC3D75F\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"ApplicationService\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{1150, 321.21471547378786}\",\n  \"angle\" : 0,\n  \"size\" : \"{440.00000000000011, 78.91559468724769}\",\n  \"identifier\" : \"55034CB4-4F29-4F93-8922-B61771B2E2BE\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{1150.4751431284874, 332.12119198306522}\",\n  \"angle\" : 0,\n  \"size\" : \"{439.04971374302539, 68.009118177970294}\",\n  \"identifier\" : \"AF2E2BA0-880B-48E8-B5CC-D47EDA8888BB\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"ElectionService\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{1155, 735.57787463143904}\",\n  \"angle\" : 0,\n  \"size\" : \"{430.00000000000011, 75.504707855432329}\",\n  \"identifier\" : \"7254CD37-27C2-4E1A-BCBD-EB6459D8760B\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{1155.4643444210217, 746.01295182788817}\",\n  \"angle\" : 0,\n  \"size\" : \"{429.07131115795664, 65.069630658983144}\",\n  \"identifier\" : \"E46E3294-2E65-4B82-B489-C2F8843EF137\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"MailService\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{1150, 419.97020798846734}\",\n  \"angle\" : 0,\n  \"size\" : \"{440.00000000000011, 78.91559468724769}\",\n  \"identifier\" : \"01D855C9-8222-4A10-80AF-CB529F1C5394\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{1150.4751431284874, 430.87668449774469}\",\n  \"angle\" : 0,\n  \"size\" : \"{439.04971374302539, 68.009118177970294}\",\n  \"identifier\" : \"ABD92555-8315-46FB-9432-03A8118C2677\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"PartyService\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{1150, 526.06029859202147}\",\n  \"angle\" : 0,\n  \"size\" : \"{440.00000000000011, 78.91559468724769}\",\n  \"identifier\" : \"12438F9C-0C50-40D3-8F4F-D26C8858BFA4\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{1150.4751431284874, 536.96677510129871}\",\n  \"angle\" : 0,\n  \"size\" : \"{439.04971374302539, 68.009118177970294}\",\n  \"identifier\" : \"4EC8F87A-84FE-4F25-9288-01E6ED2E6668\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"RoleService\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{1150, 629.18488406946722}\",\n  \"angle\" : 0,\n  \"size\" : \"{440.00000000000011, 78.91559468724769}\",\n  \"identifier\" : \"E7152AA3-50E7-40EB-8E05-9F02560726EE\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{1150.4751431284874, 640.09136057874457}\",\n  \"angle\" : 0,\n  \"size\" : \"{439.04971374302539, 68.009118177970294}\",\n  \"identifier\" : \"47850904-B1D8-452E-806C-731167A9515C\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"VoteService\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{1175, 949.58035250281227}\",\n  \"angle\" : 0,\n  \"size\" : \"{389.99999999999994, 150.41964749718773}\",\n  \"identifier\" : \"F47E1C10-7B76-4159-A1A9-FFC2A13B464D\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"flow\",\n  \"position\" : \"{69.999999999999986, 50}\",\n  \"angle\" : 0,\n  \"size\" : \"{220.00000000000003, 1050}\",\n  \"identifier\" : \"20F7EAD3-70FF-44DC-8A21-C14D0AB28837\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n    \"comic\" : false,\n    \"fillColor1\" : \"#FFFFFFFF\",\n    \"fillMode\" : 1\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : true,\n  \"shape\" : \"svg\",\n  \"position\" : \"{130, 150}\",\n  \"angle\" : 0,\n  \"size\" : \"{100, 100}\",\n  \"identifier\" : \"8D3C90E7-591A-485E-8D42-943FCB46FFD1\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_13\",\n  \"value\" : \"\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false,\n  \"shapeOption\" : {\n    \"name\" : \"gmdi>hardware\\\/phone_iphone-materialicons-24px\",\n    \"isTemplate\" : true\n  }\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : true,\n  \"shape\" : \"svg\",\n  \"position\" : \"{130, 940}\",\n  \"angle\" : 0,\n  \"size\" : \"{100, 100}\",\n  \"identifier\" : \"094D5099-3547-412D-A596-97A4D138E684\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_13\",\n  \"value\" : \"\",\n  \"privateStyle\" : {\n    \"textVerticalAlignment\" : 0\n  },\n  \"isRelative\" : false,\n  \"shapeOption\" : {\n    \"name\" : \"gmdi>hardware\\\/laptop-materialicons-24px\",\n    \"isTemplate\" : true\n  }\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{105.23217221051084, 550}\",\n  \"angle\" : 0,\n  \"size\" : \"{149.53565557897832, 104.79017625140614}\",\n  \"identifier\" : \"5BFEDC5E-FE15-4B26-80BB-0729BCB0C07C\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"Vue Client\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"layout\" : \"group\",\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"rect\",\n  \"position\" : \"{375, 47.185264377109206}\",\n  \"angle\" : 0,\n  \"size\" : \"{390, 172.39508812570307}\",\n  \"identifier\" : \"2124B7FE-D8C3-4262-B7B6-0179C83AEE29\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"privateStyle\" : {\n    \"strokeMode\" : 0,\n    \"fillMode\" : 0\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node",
+      "children" : "[\n  \"58C70793-D240-4509-AF62-6F8F84C709FB\",\n  \"845FAF37-D6DF-40A6-9437-1F2646ABA81A\",\n  \"BB6C18CD-D739-4C3A-91E1-9205453362AC\"\n]"
+    },
+    {
+      "attrs" : "{\n  \"layout\" : \"group\",\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"rect\",\n  \"position\" : \"{375, 307.60491187429693}\",\n  \"angle\" : 0,\n  \"size\" : \"{390, 172.39508812570307}\",\n  \"identifier\" : \"2308B9D2-203A-4468-9323-B4BE147A7E0A\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"privateStyle\" : {\n    \"fillMode\" : 0,\n    \"strokeMode\" : 0\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node",
+      "children" : "[\n  \"77A6720C-787E-414F-8C49-898DF98D5D72\",\n  \"4C921155-9179-4EF7-BB8A-E08B47FBFBF6\",\n  \"AF495F99-0086-45C8-8028-AACB6E6B7252\"\n]"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{850, 49.580352502812275}\",\n  \"angle\" : 0,\n  \"size\" : \"{200, 810.41964749718784}\",\n  \"identifier\" : \"E7D498ED-B6BA-4BC4-9B5E-9576A7BB87CA\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{890.00000000000011, 637.14056745327525}\",\n  \"angle\" : 270,\n  \"size\" : \"{379.53565557897838, 141.89143986361444}\",\n  \"identifier\" : \"5DBFF43C-C026-4B79-8883-ED8949498959\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"AWS \\nREST API GATEWAY\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{1120, 183.93355020259742}\",\n  \"angle\" : 0,\n  \"size\" : \"{490.00000000000006, 666.06644979740258}\",\n  \"identifier\" : \"7CA54F03-04D7-4858-BEA1-D65B472AE838\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"variant_4\",\n  \"privateStyle\" : {\n    \"fillColor2\" : \"#00000000\",\n    \"strokeColor\" : \"#212121FF\",\n    \"fillColor1\" : \"#21212100\",\n    \"strokeDash\" : 2,\n    \"strokeWidth\" : 8.5\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{1170.4643444210215, 50.987720314257672}\",\n  \"angle\" : 0,\n  \"size\" : \"{379.53565557897838, 72.395088125703069}\",\n  \"identifier\" : \"31C13FB6-08F6-4FFE-9E9C-C422EACC1609\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"AWS - LAMBDA MICROSERVICES\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"layout\" : \"group\",\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"rect\",\n  \"position\" : \"{1150, 164.79017625140614}\",\n  \"angle\" : 0,\n  \"size\" : \"{440.00000000000006, 78.915594687247676}\",\n  \"identifier\" : \"16C91399-9C83-499F-BEF6-15D4DA90F1F7\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"privateStyle\" : {\n    \"strokeMode\" : 0,\n    \"fillMode\" : 0\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node",
+      "children" : "[\n  \"B3818E2C-FC23-4B65-A2A7-F37A35724A91\",\n  \"59BE4562-7A0C-4133-89B1-F7A50CC3D75F\"\n]"
+    },
+    {
+      "attrs" : "{\n  \"layout\" : \"group\",\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"rect\",\n  \"position\" : \"{1150, 289.21446599605571}\",\n  \"angle\" : 0,\n  \"size\" : \"{440.00000000000006, 78.915594687247676}\",\n  \"identifier\" : \"7199F868-D54F-4270-8616-3CB4E8FC385A\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"privateStyle\" : {\n    \"strokeMode\" : 0,\n    \"fillMode\" : 0\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node",
+      "children" : "[\n  \"55034CB4-4F29-4F93-8922-B61771B2E2BE\",\n  \"AF2E2BA0-880B-48E8-B5CC-D47EDA8888BB\"\n]"
+    },
+    {
+      "attrs" : "{\n  \"layout\" : \"group\",\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"rect\",\n  \"position\" : \"{1155, 784.49529214456777}\",\n  \"angle\" : 0,\n  \"size\" : \"{430.00000000000006, 75.504707855432315}\",\n  \"identifier\" : \"0B8036C4-10A9-45BF-B6C3-1F05AE3DFFA7\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"privateStyle\" : {\n    \"strokeMode\" : 0,\n    \"fillMode\" : 0\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node",
+      "children" : "[\n  \"7254CD37-27C2-4E1A-BCBD-EB6459D8760B\",\n  \"E46E3294-2E65-4B82-B489-C2F8843EF137\"\n]"
+    },
+    {
+      "attrs" : "{\n  \"layout\" : \"group\",\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"rect\",\n  \"position\" : \"{1150, 413.13090692444013}\",\n  \"angle\" : 0,\n  \"size\" : \"{440.00000000000006, 78.915594687247676}\",\n  \"identifier\" : \"46463380-FC44-49D0-8C9B-4E9B685A051E\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"privateStyle\" : {\n    \"fillMode\" : 0,\n    \"strokeMode\" : 0\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node",
+      "children" : "[\n  \"01D855C9-8222-4A10-80AF-CB529F1C5394\",\n  \"ABD92555-8315-46FB-9432-03A8118C2677\"\n]"
+    },
+    {
+      "attrs" : "{\n  \"layout\" : \"group\",\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"rect\",\n  \"position\" : \"{1150, 546.25065662755799}\",\n  \"angle\" : 0,\n  \"size\" : \"{440.00000000000006, 78.915594687247676}\",\n  \"identifier\" : \"D0E7CC7B-376F-4616-9C0E-D01BD70A8C36\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"privateStyle\" : {\n    \"strokeMode\" : 0,\n    \"fillMode\" : 0\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node",
+      "children" : "[\n  \"12438F9C-0C50-40D3-8F4F-D26C8858BFA4\",\n  \"4EC8F87A-84FE-4F25-9288-01E6ED2E6668\"\n]"
+    },
+    {
+      "attrs" : "{\n  \"layout\" : \"group\",\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"rect\",\n  \"position\" : \"{1150, 668.70797128547645}\",\n  \"angle\" : 0,\n  \"size\" : \"{440.00000000000006, 78.915594687247676}\",\n  \"identifier\" : \"313264D5-0286-431F-8145-B1DAE9E8F9EB\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"privateStyle\" : {\n    \"fillMode\" : 0,\n    \"strokeMode\" : 0\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node",
+      "children" : "[\n  \"E7152AA3-50E7-40EB-8E05-9F02560726EE\",\n  \"47850904-B1D8-452E-806C-731167A9515C\"\n]"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"cylinder\",\n  \"position\" : \"{1315, 1014.5803525028123}\",\n  \"angle\" : 0,\n  \"size\" : \"{100, 75}\",\n  \"identifier\" : \"B6F079DE-ED50-47CD-BEA6-D2935EEF69F5\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"variant_3\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{1250, 959.58035250281216}\",\n  \"angle\" : 0,\n  \"size\" : \"{259.99999999999983, 72.395088125703069}\",\n  \"identifier\" : \"1B47F11E-659B-434A-A8DE-17E4657F001B\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"POSTGRESQL\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 0,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"advanced:rounded-rect\",\n  \"position\" : \"{710, 949.58035250281227}\",\n  \"angle\" : 0,\n  \"size\" : \"{389.99999999999994, 150.41964749718773}\",\n  \"identifier\" : \"DAD1A902-FA16-48F6-8445-860846F35002\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_12\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "class" : "dia-node",
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"text\",\n  \"position\" : \"{710, 949.58035250281227}\",\n  \"angle\" : 0,\n  \"size\" : \"{390.00000000000006, 150.41964749718784}\",\n  \"identifier\" : \"B549251A-95B9-405F-BAD1-F5B32194B140\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_11\",\n  \"value\" : \"OpenAPI 3.0\\nSpecification\",\n  \"privateStyle\" : {\n    \"textColor\" : \"#212121FF\",\n    \"textAlignment\" : 2,\n    \"textVerticalAlignment\" : 1,\n    \"font\" : \"Monaco,36.0\"\n  },\n  \"isRelative\" : false\n}"
+    },
+    {
+      "class" : "dia-node",
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"arrows:arrow-right\",\n  \"position\" : \"{290, 579.62392493660047}\",\n  \"angle\" : 0,\n  \"size\" : \"{560, 45.542326378205303}\",\n  \"identifier\" : \"F9680BEE-564D-4A6B-A68C-9C7DA37B91FB\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_23\",\n  \"privateStyle\" : {\n    \"strokeWidth\" : 1\n  },\n  \"isRelative\" : false\n}"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"arrows:arrow-two-way-updown\",\n  \"position\" : \"{545, 207.60491187429693}\",\n  \"angle\" : 0,\n  \"size\" : \"{50, 100}\",\n  \"identifier\" : \"50FAED56-1D1F-4B73-B471-95316AB1D8E4\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_23\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"arrows:arrow-two-way-updown\",\n  \"position\" : \"{372.96576371398237, 110}\",\n  \"angle\" : 90,\n  \"size\" : \"{50, 72.965763713982369}\",\n  \"identifier\" : \"3EF48C5D-46FD-4F90-863A-3AE042071EEB\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_23\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "class" : "dia-node",
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"arrows:arrow-two-way-updown\",\n  \"position\" : \"{842.96576371398237, 363.13090692444013}\",\n  \"angle\" : 90,\n  \"size\" : \"{50, 72.965763713982369}\",\n  \"identifier\" : \"3D0C9746-C863-4324-ADF1-53E63DEA9648\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_23\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"arrows:arrow-two-way-updown\",\n  \"position\" : \"{1113.6934497980455, 485}\",\n  \"angle\" : 90,\n  \"size\" : \"{50, 63.693449798045322}\",\n  \"identifier\" : \"00602E82-E7A3-458D-8812-A2938132B82B\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_23\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"arrows:arrow-two-way-updown\",\n  \"position\" : \"{1345, 849.58035250281227}\",\n  \"angle\" : 0,\n  \"size\" : \"{50, 100}\",\n  \"identifier\" : \"ED3139D3-76A0-407E-A4DD-EEBD04CD6A62\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_23\",\n  \"privateStyle\" : {\n\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    },
+    {
+      "attrs" : "{\n  \"lockAspectRatio\" : false,\n  \"shape\" : \"arrows:arrow-right\",\n  \"position\" : \"{927.22883681089729, 940}\",\n  \"angle\" : 270,\n  \"size\" : \"{73.198423067093032, 45.542326378205303}\",\n  \"identifier\" : \"1B2E82F4-F0D7-4789-B816-1DB04F927B3C\",\n  \"tag\" : 0,\n  \"connectable\" : true,\n  \"isLocked\" : false,\n  \"visible\" : true,\n  \"isTemplate\" : false,\n  \"themeStyle\" : \"style_23\",\n  \"privateStyle\" : {\n    \"strokeWidth\" : 1\n  },\n  \"isRelative\" : false\n}",
+      "class" : "dia-node"
+    }
+  ],
+  "frame" : [
+    [
+      0,
+      0
+    ],
+    [
+      1654,
+      1169
+    ]
+  ],
+  "terminals" : {
+
+  },
+  "design" : {
+    "connectorPathStyle" : "rounded",
+    "themeName" : "chemistry2",
+    "paper" : {
+      "rightMargin" : 20,
+      "bottomMargin" : 20,
+      "topMargin" : 20,
+      "name" : "a3",
+      "leftMargin" : 20,
+      "ori" : false
+    },
+    "autoFrame" : true,
+    "showPageMarker" : true
+  },
+  "showsGrids" : true,
+  "version" : "100"
+}
