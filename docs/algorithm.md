@@ -1,194 +1,175 @@
 # Match Algorithmus
 
-Der Matching Prozess von VOTO basiert auf einem relativ simplen aber effizienten Algorithmus.
+Der Matching Prozess von VOTO basiert standardmäßig auf einem relativ simplen aber effizienten Algorithmus, der jedoch als Creator selbst individualisiert werden kann.
 
-Grundlegend wird die Zustimmung eines Statements mit fünf verschiedenen Stufen prozentual bewertet. Der Nutzer kann auswählen:
+Grundlegend ist eine Matrix, die sowohl Match ( Kandidat / Partei ) als auch User Entscheidungen enthält. Je nach Einstellung beträgt die Größe dieser Matrix 3\*3 oder 5\*5 Zellen.
 
-| Slider Text         | Gespeicherter Wert |
-| ------------------- | ------------------ |
-| Stimme voll zu      | 100                |
-| Stimme eher zu      | 75                 |
-| Neutral             | 50                 |
-| Stimme weniger zu   | 25                 |
-| Stimme gar nicht zu | 0                  |
+VOTO bietet im Portal bereits drei vordefinierte Matrizen ( Manhattan/Skalarprodukt/Hybrid ). Basis dafür ist eine Masterarbeit von [Veikko Isotalo](https://aaltodoc.aalto.fi/bitstream/handle/123456789/59362/master_Isotalo_Veikko.pdf?sequence=1%26isAllowed=y).
 
-Je nachdem ob der Nutzer sich dafür entscheidet, eine These als wichtig einzustufen, wird der Wert doppelt gewichtet.
+![3*3 Matrizen](../res/matrix_3*3.png "3*3 Matrizen")
+![5*5 Matrizen](../res/matrix_5*5.png "3*3 Matrizen")
 
-Die Beantwortung der Thesen wird in einem Array gespeichert und nach der letzten Abstimmung an eine Function geschicktm, die die Matches berechnet:
+Je nachdem, wie bei einer These abgestimmt wird, werden Punkte aus der Matrix vergeben. VOTO bietet an, jede Zelle der Matrix komplett selbst zu individualisieren, sodass der Algorithmus perfekt an die jeweiligen Bedürfnisse angepasst werden kann. Folgendes Bild zeigt ein Beispiel einer Matrix:
 
-### Schritt 1: Kandidierende laden
+![Matrixbeispiel](../res/matrix_detail.png "Matrixbeispiel")
+
+### Schritt 1: Kandidierende / Parteien laden
 
 Für die angegebene Wahl werden alle Kandidierenden, die VOTO bereits ausgefüllt haben, aus der Datenbank geladen.
 
-### Schritt 2: Neutrale Thesen überspringen
+### Schritt 2: Berechnung der Punktzahl
 
-Es werden alle Thesen des Nutzers, die neutral beantwortet wurden, nicht gezählt und nicht in die Berechnung mit eingezogen. Der Rest wird weiter verarbeitet.
+Durch die dynamische Anzahl an Thesen sowie die Möglichkeit der doppelten Wertung variiert die maximale Punktzahl, die bei einem Match erreicht werden kann.
 
-### Schritt 3: Berechnung der Punktzahl
+Der komplette Code zur Berechnung der Punkzahl ist Teil des VoteService im Backend Repository und [hier verfügbar](https://github.com/voto-vote/backend-services/blob/main/cmd/VoteService/main.go#L216)
 
-Durch die dynamische Anzahl an Thesen sowie das Überspringen von neutralen Abstimmungen variiert die maximale Punktzahl, die bei einem Match erreicht werden kann.
+```golang
+func calculatePoints(voteMap map[int64]types.VoteItem, matrix [][]float64, maxValue int) float64 {
 
-Die maximale Punktzahl (am Anfang 0) ergibt sich aus der Summe der Formel, die bei jeder These aufgerufen wird:
+	maxPoints := 0
+	maxMinusPoints := 0
+	points := 0.0
+	for _, v := range voteMap {
+		min, max := getMinMaxOfMatrix(matrix)
+		addMaxPoints := v.UserWeight * int(max)
+		addMaxMinusPoints := v.UserWeight * int(min)
+		maxPoints += addMaxPoints
+		maxMinusPoints += addMaxMinusPoints
 
-```typescript
-maxPoints += = 2.0 * userWeight * candidateWeight;
+		divider := float64(maxValue / (len(matrix) - 1))
+		matchIndex := int(math.Round(float64(v.MVote) / divider))
+		userIndex := int(math.Round(float64(v.UserVote) / divider))
+		addPoints := matrix[matchIndex][userIndex] * float64(v.UserWeight)
+		points += addPoints
+	}
+
+	maxPoints += int(math.Abs(float64(maxMinusPoints)))
+	points += math.Abs(float64(maxMinusPoints))
+	logrus.Info("Match Result: ", points/float64(maxPoints)*100)
+	return points / float64(maxPoints) * 100
+}
 ```
-
-Die tatsächlich erreichten Punkte für eine These werden nun wie folgt berrechnet:
-
-```typescript
-const addPoints =
-  ((4 - Math.abs(userVote - candidateVote) / 25) / 2) *
-  userWeight *
-  candidateWeight;
-points += addPoints;
-```
-
-### Schritt 4: Verarbeiten der Gesamtpunktzahl
-
-Nachdem die Punktzahl aller Thesen, wie oben beschrieben, für jeden Kandidierenden berechnet und addiert wurde, wird das Resultat gerundet und in Prozent zurückgegeben:
-
-```typescript
-return Math.round((points / maxPoints) * 10000) / 100;
-```
-
----
 
 ## Fallbeispiel:
 
-Nehmen wir an, wir haben für ein einfaches Beispiel nur fünf Thesen.
+Nehmen wir an, wir haben für ein einfaches Beispiel nur fünf Thesen und benutzen die Hybrid Matrix mit 5\*5 Zellen.
 
-Die Beantwortung des Nutzers und des Kandidaten lautet:
+Die Beantwortung des Nutzers und der Kandidierenden lautet:
 
 <table>
  <tr>
   <th >These</th>
   <th colspan="2"> Wähler</th>
-  <th colspan="2"> Kandidat A</th>
-  <th colspan="2"> Kandidat B</th>
+  <th colspan="1"> Kandidat A</th>
+  <th colspan="1"> Kandidat B</th>
  </tr>
  <tr>
   <td>&nbsp;</td>
   <td>Wert</td>
   <td>Wichtige Frage</td>
   <td>Wert</td>
-  <td>Wichtige Frage</td>
   <td>Wert</td>
-  <td>Wichtige Frage</td>
  </tr>
  <tr>
  <td>0</td>
   <td>25</td>
  <td>⬜️ </td>
  <td>0</td>
- <td>⬜️ </td>
  <td>25</td>
-  <td>✅ </td>
  </tr>
   <tr>
  <td>1</td>
   <td>100</td>
  <td>⬜️ </td>
  <td>75</td>
- <td>✅ </td>
  <td>75</td>
-  <td>⬜️ </td>
  </tr>
    <tr>
  <td>2</td>
   <td>75</td>
  <td>✅ </td>
  <td>50</td>
- <td>⬜️ </td>
  <td>100</td>
-  <td>⬜️ </td>
  </tr>
     <tr>
  <td>3</td>
   <td>50</td>
  <td>⬜️  </td>
  <td>0</td>
- <td>⬜️ </td>
  <td>0</td>
-  <td>⬜️ </td>
  </tr>
   <tr>
  <td>4</td>
   <td>0</td>
- <td>⬜️  </td>
- <td>100</td>
  <td>⬜️ </td>
+ <td>100</td>
  <td>50</td>
-  <td>⬜️ </td>
  </tr>
 </table>
 
 Zuerst werden nun also die Kandiderenden geladen, was in unserem Beispiel schon der Fall ist.
 
-Anschließend werden die Thesen aussortiert, die von einem Nutzer als `neutral` eingestuft wurden. Damit ergibt sich folgende Datenstruktur des Nutzers:
+Anschließend wird die Konfiguration der Wahlhilfe geladen. Dort findet man einen Teil, der die Matrix beschreibt:
 
-```json
-{
-  "0": {
-    "value": 25,
-    "weight": 1
-  },
-  "1": {
-    "value": 100,
-    "weight": 1
-  },
-  "2": {
-    "value": 75,
-    "weight": 2
-  },
-  "4": {
-    "value": 0,
-    "weight": 1
-  }
-}
+```golang
+matrix := [][]float64{
+			{1, 0.5, 0, -0.5, -1},
+			{0.5, 0.75, 0.25, -0.25, -0.5},
+			{0, 0.25, 0.5, 0.25, 0},
+			{-0.5, -0.25, 0.25, 0.75, 0.5},
+			{-1, -0.5, 0, 0.5, 1},
+		}
 ```
 
 Es folgt die Berechnung der Punktzahl für jede These:
 
 #### Kandidat A:
 
-| These | Maximale Punktzahl | Punktzahl                                                         |
-| ----- | ------------------ | ----------------------------------------------------------------- |
-| 0     | `(2 * 1 * 1) = 2`  | <code>((4- &#124;(25-0)&#124; / 25) / 2) \* 1 \* 1 = 1.5</code>   |
-| 1     | `(2 * 1 * 2) = 4`  | <code>((4- &#124;(100-75)&#124; / 25) / 2) \* 1 \* 2 = 3.0</code> |
-| 2     | `(2 * 2 * 1) = 4`  | <code>((4- &#124;(75-50)&#124; / 25) / 2) \* 2 \* 1 = 3.0</code>  |
-| 4     | `(2 * 1 * 1) = 2`  | <code>((4- &#124;(0-100)&#124; / 25) / 2) \* 1 \* 1 = 0.0</code>  |
+| These | Maximale Punktzahl | Minimale Punktzahl | Punktzahl                     |
+| ----- | ------------------ | ------------------ | ----------------------------- |
+| 0     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* 0.25 = 0.25</code> |
+| 1     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* 0.5 = 0.5</code>   |
+| 2     | `(2 * 1) = 2`      | `(2 * -1) = -2`    | <code>2 \* 0.25 = 0.5</code>  |
+| 3     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* 0 = 0</code>       |
+| 4     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* -1 = -1</code>     |
 
-So ergibt sich die maximal erreichbare Punktzahl: **`12`** sowie die tatsächlich erreichte Punktzahl von **`7.5`**.
+So ergibt sich die maximal erreichbare Punktzahl: **`6`** sowie die minimale Punktzahl von **`-6`** tatsächlich erreichte Punktzahl von **`0.25`**.
 
-Der Rückgabewert für diesen Kandidat ergibt sich nun:
+Damit wir korrekte Prozentzahlen als Ergebnis bekommen wird der absolute Wert (ohne negatives Vorzeichen) zur maximal erreichbaren sowie tatsächlich erreichten Punktzahl addiert:
 
-```javascript
-((7.5 / 12.0) * 100 = 62.5;
-```
+`6 + Math.abs(-6) = 12`
+`0.25 + Math.abs(-6) = 6.25`
 
-Gerundet hat man nun ein Ergebnis von **`63%`**.
+Schlussendlich wird nun der prozentuale Wert berechnet:
+
+`6.25 / 12 * 100 = 52.08`
+
+Gerundet hat man nun ein Ergebnis von **`52%`**.
 
 ---
 
 #### Kandidat B:
 
-| These | Maximale Punktzahl | Punktzahl                                                         |
-| ----- | ------------------ | ----------------------------------------------------------------- |
-| 0     | `(2 * 1 * 2) = 4`  | <code>((4- &#124;(25-25)&#124; / 25) / 2) \* 1 \* 2 = 4.0</code>  |
-| 1     | `(2 * 1 * 1) = 2`  | <code>((4- &#124;(100-75)&#124; / 25) / 2) \* 1 \* 1 = 1.5</code> |
-| 2     | `(2 * 2 * 1) = 4`  | <code>((4- &#124;(75-100)&#124; / 25) / 2) \* 2 \* 1 = 3.0</code> |
-| 4     | `(2 * 1 * 1) = 2`  | <code>((4- &#124;(0-50)&#124; / 25) / 2) \* 1 \* 1 = 1.0</code>   |
+| These | Maximale Punktzahl | Minimale Punktzahl | Punktzahl                     |
+| ----- | ------------------ | ------------------ | ----------------------------- |
+| 0     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* 0.75 = 0.75</code> |
+| 1     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* 0.5 = 0.5</code>   |
+| 2     | `(2 * 1) = 2`      | `(2 * -1) = -2`    | <code>2 \* 0.5 = 1</code>     |
+| 3     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* 0 = 0</code>       |
+| 4     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* 0.5 = 0.5</code>   |
 
-So ergibt sich die maximal erreichbare Punktzahl: **`12`** sowie die tatsächlich erreichte Punktzahl von **`9.5`**.
+So ergibt sich die maximal erreichbare Punktzahl: **`6`** sowie die minimale Punktzahl von **`-6`** tatsächlich erreichte Punktzahl von **`2.75`**.
 
-Der Rückgabewert für diesen Kandidat ergibt sich nun:
+Damit wir korrekte Prozentzahlen als Ergebnis bekommen wird der absolute Wert (ohne negatives Vorzeichen) zur maximal erreichbaren sowie tatsächlich erreichten Punktzahl addiert:
 
-```javascript
-((9.5 / 12.0) * 100 = 79.17;
-```
+`6 + Math.abs(-6) = 12`
+`2.75 + Math.abs(-6) = 8.75`
 
-Gerundet hat man nun ein Ergebnis von **`79%`**.
+Schlussendlich wird nun der prozentuale Wert berechnet:
+
+`8.75 / 12 * 100 = 72.91`
+
+Gerundet hat man nun ein Ergebnis von **`73%`**.
 
 ---
 
