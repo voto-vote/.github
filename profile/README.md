@@ -10,30 +10,30 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary>Inhalt</summary>
+  <summary>Table of contents</summary>
   <ol>
     <li>
-      <a href="#was-ist-voto">Was ist VOTO?</a>
+      <a href="#what-is-voto">What is VOTO?</a>
     </li>
     <li>
-      <a href="./docs/votoforvoters.md">VOTO für Wählende</a>
+      <a href=". /docs/votoforvoters.md">VOTO for voters</a>
     </li>
     <li>
-      <a href="./docs/votoforcandidates.md">VOTO für Kandidierende</a>
+      <a href="./docs/votoforcandidates.md">VOTO for candidates</a>
     </li>
     <li>
-      <a href="./docs/architecture.md">VOTO Software</a>
+      <a href=". /docs/architecture.md">VOTO Software</a>
       <ul>
         <li><a href="./docs/cicd.md">CI/CD</a></li>
-        <li><a href="./docs/algorithm.md">Match Algorithmus</a></li>
-        <li><a href="./docs/roles.md">Rollenkonzepte</a></li>
+        <li><a href="./docs/algorithm.md">Match Algorithm</a></li>
+        <li><a href=". /docs/roles.md">Role concepts</a></li>
       </ul>
     </li>
     <li><a href="./docs/vaas.md">VOTO as a Service</a></li>
   </ol>
 </details>
 
-## Was ist VOTO?
+## What is VOTO?
 
-[VOTO](https://voto.vote) ist eine parteipolitisch neutrale digitale Wahlhilfe.
-Bürgerinnen und Bürger können sich über die Haltung der Parteien und Kandidierenden zu politischen Themen für die anstehende Wahl informieren und sehen, wer ihnen in politischen Themen am nächsten steht.
+[VOTO](https://voto.vote) is a politically neutral digital voting advise application.
+Citizens can find out about the parties' and candidates' stances on political issues for the upcoming election and see who is closest to them on political issues.
