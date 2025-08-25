@@ -2,10 +2,10 @@
 <br />
 <p align="center">
   <a href="https://voto.vote">
-    <img src="https://voto-mailimages.s3.eu-central-1.amazonaws.com/voto.png" alt="Logo" width="50%" height="auto">
+    <img src="./logo.svg" alt="Logo" width="50%" height="auto">
   </a>
 
-  <h3 align="center">Wählen einfach machen.</h3>
+  <h3 align="center">Voting made easy</h3>
 </p>
 
 <!-- TABLE OF CONTENTS -->
