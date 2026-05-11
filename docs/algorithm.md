@@ -156,20 +156,20 @@ Gerundet hat man nun ein Ergebnis von **`52%`**.
 | 1     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* 0.5 = 0.5</code>   |
 | 2     | `(2 * 1) = 2`      | `(2 * -1) = -2`    | <code>2 \* 0.5 = 1</code>     |
 | 3     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* 0 = 0</code>       |
-| 4     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* 0.5 = 0.5</code>   |
+| 4     | `(1 * 1) = 1`      | `(1 * -1) = -1`    | <code>1 \* 0 = 0</code>   |
 
-So ergibt sich die maximal erreichbare Punktzahl: **`6`** sowie die minimale Punktzahl von **`-6`** tatsächlich erreichte Punktzahl von **`2.75`**.
+So ergibt sich die maximal erreichbare Punktzahl: **`6`** sowie die minimale Punktzahl von **`-6`** tatsächlich erreichte Punktzahl von **`2.25`**.
 
 Damit wir korrekte Prozentzahlen als Ergebnis bekommen wird der absolute Wert (ohne negatives Vorzeichen) zur maximal erreichbaren sowie tatsächlich erreichten Punktzahl addiert:
 
 `6 + Math.abs(-6) = 12`
-`2.75 + Math.abs(-6) = 8.75`
+`2.25 + Math.abs(-6) = 8.25`
 
 Schlussendlich wird nun der prozentuale Wert berechnet:
 
-`8.75 / 12 * 100 = 72.91`
+`8.25 / 12 * 100 = 68,75`
 
-Gerundet hat man nun ein Ergebnis von **`73%`**.
+Gerundet hat man nun ein Ergebnis von **`69%`**.
 
 ---
 
